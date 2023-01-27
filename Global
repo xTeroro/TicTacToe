@@ -1,0 +1,40 @@
+#ifndef GlobalH
+#define GlobalH
+
+#include<string>
+
+namespace Vars{
+    extern char Player, Opponent;
+    extern char DrawMap[3][3];
+    extern int Map[3][3];
+    extern int AvailableSpots;
+    extern int ColumnCord, RowCord, OpponentCord, Winner;
+};
+
+namespace Funcs{
+    // Question Functions
+    bool AskChar(char y, char n,std::string msg, std::string error);
+    int Ask3Char(char option_1, char option_2, char r, std::string msg, std::string error);
+    int CheckCord(int Max, std::string msg, std::string error);
+
+    // Resetting Maps Funtions
+    void ClearMap();
+    void ResetDrawMap();
+
+    //Random
+    int Random(int max);
+
+    // Win Checking
+    void checkkWinner(int Map[3][3]);
+
+    // Game Functions
+    void SetUp();
+    void Draw();
+};
+
+namespace BotF{
+    void BestMove();
+    extern int I, J;
+};
+
+#endif
